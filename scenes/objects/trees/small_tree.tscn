@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://d1xgd21pg2yyr"]
+
+[ext_resource type="Shader" uid="uid://uah07qxi2jqr" path="res://scenes/objects/trees/tree_shake.gdshader" id="1_1fq6f"]
+[ext_resource type="Texture2D" uid="uid://btyy7e4g1j5rx" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_6xi0i"]
+[ext_resource type="Script" uid="uid://ppst3657wbeb" path="res://scenes/objects/trees/small_tree.gd" id="2_je2gs"]
+[ext_resource type="PackedScene" uid="uid://bp7ssfj5gy6b2" path="res://scenes/components/hurt_component.tscn" id="2_lujoq"]
+[ext_resource type="PackedScene" uid="uid://bmqkkjxwiofdi" path="res://scenes/components/damage_component.tscn" id="4_mifqh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnoag"]
+resource_local_to_scene = true
+shader = ExtResource("1_1fq6f")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ogdc"]
+atlas = ExtResource("1_6xi0i")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axqi4"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi11b"]
+size = Vector2(8, 20)
+
+[node name="SmallTree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_xnoag")
+position = Vector2(0, -11)
+texture = SubResource("AtlasTexture_2ogdc")
+script = ExtResource("2_je2gs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_axqi4")
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_lujoq")]
+position = Vector2(68.5913, 26.2243)
+tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(-68.5913, -25.2243)
+shape = SubResource("RectangleShape2D_wi11b")
+debug_color = Color(0.944736, 0.179433, 0.393448, 0.42)
+
+[node name="DamageComponent" parent="." instance=ExtResource("4_mifqh")]
+max_damage = 3
