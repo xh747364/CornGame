@@ -43,11 +43,17 @@ func _on_daynight_changed(is_day: bool):
 
 
 func _on_cheetach_speed_button_pressed() -> void:
+	CustomInputManager.remove_action("hit")
 	DayTime.game_day_speed = cheetach_speed
+	CustomInputManager.restore_action("hit")
 
 
 func _on_fast_speed_button_pressed() -> void:
+	CustomInputManager.remove_action("hit")
 	DayTime.game_day_speed = fast_speed
+	CustomInputManager.restore_action("hit")
 
 func _on_normal_speed_button_pressed() -> void:
+	CustomInputManager.remove_action("hit")
 	DayTime.game_day_speed = normal_speed
+	CustomInputManager.restore_action("hit")

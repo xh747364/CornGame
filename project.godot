@@ -21,6 +21,7 @@ InventoryManager="*res://scripts/globals/inventory_manager.gd"
 DayTime="*res://scripts/globals/day_time.gd"
 DayAndNightCycleMmanager="*res://scripts/globals/day_and_night_cycle_mmanager.gd"
 BubbleItemsManager="*res://scripts/globals/bubble_items_manager.gd"
+CustomInputManager="*res://scripts/globals/custom_input_manager.gd"
 
 [display]
 
@@ -42,6 +43,7 @@ folder_colors={
 
 [global_group]
 
+player=""
 navigation_polygon_source_geometry_group=""
 
 [input]
@@ -78,6 +80,12 @@ hit={
 release_tool={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(372, 29),"global_position":Vector2(391, 120),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+remove_dirt={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"command_or_control_autoremap":true,"alt_pressed":false,"shift_pressed":false,"button_mask":1,"position":Vector2(379, 35),"global_position":Vector2(398, 131),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
 

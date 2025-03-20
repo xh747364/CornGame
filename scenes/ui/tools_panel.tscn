@@ -55,36 +55,81 @@ layout_mode = 2
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+action_mode = 0
 icon = SubResource("AtlasTexture_kh1c5")
 icon_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/ToolAxe"]
+visible = false
+layout_mode = 0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 31.0
+offset_bottom = 31.0
 
 [node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+action_mode = 0
 icon = SubResource("AtlasTexture_5vrta")
 icon_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/ToolTilling"]
+visible = false
+layout_mode = 0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 31.0
+offset_bottom = 31.0
 
 [node name="ToolWateringCan" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+action_mode = 0
 icon = SubResource("AtlasTexture_0osej")
 icon_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/ToolWateringCan"]
+visible = false
+layout_mode = 0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 31.0
+offset_bottom = 31.0
 
 [node name="ToolCorn" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+action_mode = 0
 icon = SubResource("AtlasTexture_a0sf0")
 icon_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/ToolCorn"]
+visible = false
+layout_mode = 0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 31.0
+offset_bottom = 31.0
 
 [node name="ToolTomato" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+action_mode = 0
 icon = SubResource("AtlasTexture_ang8a")
 icon_alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/ToolTomato"]
+visible = false
+layout_mode = 0
+offset_left = -5.0
+offset_top = -6.0
+offset_right = 32.0
+offset_bottom = 31.0
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]

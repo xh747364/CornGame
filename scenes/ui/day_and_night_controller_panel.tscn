@@ -65,6 +65,7 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 theme_type_variation = &"DayAndNightButton"
+action_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="Control/NormalSpeedButton"]
 layout_mode = 1
@@ -88,6 +89,7 @@ offset_left = 27.0
 offset_right = 53.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
+action_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="Control/FastSpeedButton"]
 layout_mode = 1
@@ -126,6 +128,7 @@ offset_left = 54.0
 offset_right = 80.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
+action_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="Control/CheetachSpeedButton"]
 layout_mode = 1

@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://c8jaon7u758sn"]
+[gd_scene load_steps=6 format=4 uid="uid://c8jaon7u758sn"]
 
 [ext_resource type="PackedScene" uid="uid://d0up0oyykvdmy" path="res://scenes/ui/game_screen.tscn" id="1_3y1gi"]
 [ext_resource type="TileSet" uid="uid://6hscoxw01oec" path="res://Tilesets/game_tile_set.tres" id="2_jco8e"]
 [ext_resource type="PackedScene" uid="uid://dh50t6hcvjsfl" path="res://scenes/characters/player/player.tscn" id="3_3pvph"]
 [ext_resource type="PackedScene" uid="uid://dmb1k3mxmmrc" path="res://scenes/ui/day_and_night_cycle_component.tscn" id="4_uo4gf"]
 [ext_resource type="PackedScene" uid="uid://blc27qq5ehiq8" path="res://scenes/objects/plants/corn.tscn" id="5_ckwqm"]
-[ext_resource type="PackedScene" uid="uid://cif64lcl2sjmk" path="res://scenes/components/field_cursor_component.tscn" id="6_2r2n8"]
 
 [node name="TestSceneTilemap" type="Node2D"]
 
@@ -32,5 +31,3 @@ position = Vector2(245, 255)
 
 [node name="Corn" parent="." instance=ExtResource("5_ckwqm")]
 position = Vector2(440, 277)
-
-[node name="FieldCursorComponent" parent="." instance=ExtResource("6_2r2n8")]

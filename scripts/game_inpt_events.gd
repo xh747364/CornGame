@@ -25,6 +25,15 @@ static func is_movement_input() -> bool:
 		return true
 
 static func use_tool() -> bool:
-	var use_tool_value: bool = Input.is_action_just_pressed("hit")
+	var use_tool_value: bool = false
+	if InputMap.has_action("hit"):  # 检查输入映射是否存在
+		if Input.is_action_just_pressed("hit"):
+            # 执行相关逻辑
+			use_tool_value = Input.is_action_just_pressed("hit")
+			print("使用工具")
+	else:
+		use_tool_value = false
+		print("输入映射 'hit' 不存在，无法使用工具")
+	
 	
 	return use_tool_value
