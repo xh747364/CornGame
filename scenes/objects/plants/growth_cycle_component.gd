@@ -3,7 +3,7 @@ extends Node
 
 @export var current_growth_state : DataTypes.GrowthStates = DataTypes.GrowthStates.Germination
 @export_range(5, 365) var day_unitil_harvest : int = 7
-
+@export var step: int = 1
 signal crop_maturity
 signal  crop_harvesting
 

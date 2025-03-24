@@ -16,12 +16,12 @@ func _ready() -> void:
 		DataTypes.Tools.PlantTomato: tool_tomato.get_node("Panel"),
 		DataTypes.Tools.TillGround: tool_tilling.get_node("Panel")
 	}
-## 判断当前选中的工具，是否高亮，如果都没有选中则全部取消高亮
+## 初始化选中工具列表
 func _on_tool_selected(tool: DataTypes.Tools) -> void:
 	## 取消所有工具的高亮
 	for key in tools_list:
 		tools_list[key].visible = false
-	## 高亮选中的工具，如果没有工具选中，则不设置高亮
+	## 高亮选中的工具
 	if tool != DataTypes.Tools.None:
 		tools_list[tool].visible = true
 func remove_actions() -> void:
@@ -31,12 +31,14 @@ func _on_tool_axe_pressed() -> void:
 	_on_tool_selected(DataTypes.Tools.AxeWood)
 	ToolManager.select_tool(DataTypes.Tools.AxeWood)
 	CustomInputManager.restore_action("hit")
+	# get_tree().get_root().set_input_as_handled()
 
 func _on_tool_tilling_pressed() -> void:
 	remove_actions()
 	_on_tool_selected(DataTypes.Tools.TillGround)
 	ToolManager.select_tool(DataTypes.Tools.TillGround)
 	CustomInputManager.restore_action("hit")
+	# get_tree().get_root().set_input_as_handled()
 
 func _on_tool_watering_can_pressed() -> void:
 	remove_actions()

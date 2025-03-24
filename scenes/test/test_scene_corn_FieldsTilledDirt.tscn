@@ -1,15 +1,20 @@
-[gd_scene load_steps=14 format=4 uid="uid://cqh7t2wl20b3b"]
+[gd_scene load_steps=19 format=4 uid="uid://cqh7t2wl20b3b"]
 
 [ext_resource type="PackedScene" uid="uid://d0up0oyykvdmy" path="res://scenes/ui/game_screen.tscn" id="1_k7002"]
 [ext_resource type="TileSet" uid="uid://6hscoxw01oec" path="res://Tilesets/game_tile_set.tres" id="2_lajed"]
 [ext_resource type="PackedScene" uid="uid://dh50t6hcvjsfl" path="res://scenes/characters/player/player.tscn" id="3_2brjf"]
 [ext_resource type="Texture2D" uid="uid://d3gaaj7pq8jcq" path="res://assets/game/tilesets/legacy_atlas.png" id="3_8s4l0"]
+[ext_resource type="PackedScene" uid="uid://dwemmk5rfl12a" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="3_nrj3d"]
 [ext_resource type="PackedScene" uid="uid://dmb1k3mxmmrc" path="res://scenes/ui/day_and_night_cycle_component.tscn" id="4_8s4l0"]
 [ext_resource type="Texture2D" uid="uid://ci0ge7s1jumy4" path="res://assets/game/tilesets/original_atlas.png" id="4_gsbeq"]
 [ext_resource type="Script" uid="uid://by02cjqml7v8n" path="res://scenes/components/field_cursor_component.gd" id="4_k7002"]
+[ext_resource type="PackedScene" uid="uid://5ehw5piavb04" path="res://scenes/components/save_data_component.tscn" id="6_54num"]
 [ext_resource type="PackedScene" uid="uid://ft33mjc1t210" path="res://scenes/components/field_cursor_component.tscn" id="6_m6swn"]
+[ext_resource type="Resource" uid="uid://bs6225aipx8ea" path="res://resources/tilemap_layer_data_resource.tres" id="7_8vgx8"]
 [ext_resource type="PackedScene" uid="uid://c0a85x6xoolkt" path="res://scenes/components/crops_cursor_component.tscn" id="7_gsbeq"]
 [ext_resource type="Script" uid="uid://cl47ogahlrxcr" path="res://scenes/components/crops_cursor_component.gd" id="8_m6swn"]
+[ext_resource type="PackedScene" uid="uid://cdb2y6ixyt6wt" path="res://scenes/components/save_level_data_component.tscn" id="11_n7klc"]
+[ext_resource type="Script" uid="uid://dinkxx82ow87x" path="res://scenes/components/save_level_data_component.gd" id="12_nrj3d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6swn"]
 texture = ExtResource("3_8s4l0")
@@ -22,6 +27,11 @@ sources/0 = SubResource("TileSetAtlasSource_m6swn")
 sources/1 = SubResource("TileSetAtlasSource_n7klc")
 
 [node name="TestSceneTilemap" type="Node2D"]
+
+[node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("3_nrj3d")]
+
+[node name="SaveLevelDataComponent" parent="." instance=ExtResource("11_n7klc")]
+script = ExtResource("12_nrj3d")
 
 [node name="DayAndNightCycleComponent" parent="." instance=ExtResource("4_8s4l0")]
 
@@ -38,6 +48,9 @@ tile_set = ExtResource("2_lajed")
 [node name="TiledSoil" type="TileMapLayer" parent="GameTileMap"]
 tile_map_data = PackedByteArray("AAAVAAsABwABAAEAAAAVAAoABwABAAAAAAAUAAsABwABAAEAAAAUAAoABwABAAAAAAATAAsABwABAAEAAAATAAoABwABAAAAAAASAAsABwABAAIAAAASAAoABwABAAAAAAARAAsABwAAAAIAAAARAAoABwAAAAAAAAAXAAsABwACAAEAAAAXAAoABwACAAAAAAAWAAsABwABAAEAAAAWAAoABwABAAAAAAATAAwABwAAAAIAAAAUAAwABwABAAIAAAAVAAwABwABAAIAAAAWAAwABwABAAIAAAAXAAwABwACAAIAAAA=")
 tile_set = ExtResource("2_lajed")
+
+[node name="SaveDataComponent" parent="GameTileMap/TiledSoil" instance=ExtResource("6_54num")]
+save_data_resource = ExtResource("7_8vgx8")
 
 [node name="Test" type="TileMapLayer" parent="GameTileMap"]
 tile_set = SubResource("TileSet_nrj3d")

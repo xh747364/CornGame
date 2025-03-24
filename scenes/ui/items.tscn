@@ -23,6 +23,7 @@ script = ExtResource("2_qrkkx")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 29.0
+mouse_filter = 0
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
@@ -30,9 +31,10 @@ theme_override_constants/margin_bottom = 0
 
 [node name="Item" type="Button" parent="MarginContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_type_variation = &"ItemButton"
 theme_override_fonts/font = ExtResource("2_3yek1")
 action_mode = 0
 text = "背包"
 
-[connection signal="pressed" from="MarginContainer/Item" to="." method="_on_item_pressed"]
+[connection signal="gui_input" from="MarginContainer/Item" to="." method="_on_item_gui_input"]
