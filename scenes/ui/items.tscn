@@ -6,13 +6,7 @@
 
 [node name="Items" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -640.0
-offset_bottom = -360.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_pr84v")
@@ -20,14 +14,10 @@ theme_type_variation = &"DarkWoodPanel"
 script = ExtResource("2_qrkkx")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 29.0
+layout_mode = 1
+offset_right = 60.0
+offset_bottom = 49.0
 mouse_filter = 0
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
 
 [node name="Item" type="Button" parent="MarginContainer"]
 layout_mode = 2
@@ -37,4 +27,4 @@ theme_override_fonts/font = ExtResource("2_3yek1")
 action_mode = 0
 text = "背包"
 
-[connection signal="gui_input" from="MarginContainer/Item" to="." method="_on_item_gui_input"]
+[connection signal="pressed" from="MarginContainer/Item" to="." method="_on_item_pressed"]

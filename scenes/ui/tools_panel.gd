@@ -16,6 +16,12 @@ func _ready() -> void:
 		DataTypes.Tools.PlantTomato: tool_tomato.get_node("Panel"),
 		DataTypes.Tools.TillGround: tool_tilling.get_node("Panel")
 	}
+	# 禁用所有工具
+	for btn in [tool_axe, tool_corn, tool_tilling, tool_tomato, tool_watering_can]:
+			btn.disabled = true
+			btn.focus_mode = Control.FOCUS_NONE
+	ToolManager.enable_tool.connect(_on_enable_tool)
+
 ## 初始化选中工具列表
 func _on_tool_selected(tool: DataTypes.Tools) -> void:
 	## 取消所有工具的高亮
@@ -64,3 +70,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		ToolManager.select_tool(DataTypes.Tools.None)
 		for btn in [tool_axe, tool_corn, tool_tilling, tool_tomato, tool_watering_can]:
 			btn.release_focus()
+
+func _on_enable_tool(tool: DataTypes.Tools) -> void:
+	var btn = [null, tool_axe, tool_corn, tool_tilling, tool_tomato, tool_watering_can][tool]
+	if btn == null:
+		return
+	btn.disabled = false
+	btn.focus_mode = Control.FOCUS_ALL
+		

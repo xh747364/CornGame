@@ -1,0 +1,10 @@
+~ start
+向导：[[你好|嗨]]，阿炜，今天天气不错。
+向导：给你一些黄油种子咯~
+- 好的
+	do GameDialogueManager.action_give_crop_seeds()
+	向导：大的来了~
+- 还没准好
+	阿炜：我还没准备好！
+	向导: 给你脸了？
+=> END 

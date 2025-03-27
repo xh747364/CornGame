@@ -23,6 +23,7 @@ func show_bubble(item_name: String, count: int) -> void:
         bubble.position.y += bubble_offset
     
     new_bubble.position = Vector2(start_position.x, base_y)
+    print("game_scene_ui.position", game_scene_ui)
     game_scene_ui.add_child(new_bubble)
     
     current_bubbles.push_front(new_bubble)

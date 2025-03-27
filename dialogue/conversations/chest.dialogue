@@ -1,0 +1,21 @@
+~ start_cow_pasture_box
+饲养箱: [[你好|嗨]]，你的牛饿了！
+饲养箱: 是否要喂养你的牛？
+
+- 是的
+	饲养箱：我需要喂它们，我需要牛奶！
+	do GameDialogueManager.action_feed_animals()
+- 不用
+	饲养箱： 我不需要喂它们，我有足够牛奶！
+=> END
+
+~ start_chicken_pasture_box
+鸡舍: [[你好|嗨]]，你的鸡饿了！
+鸡舍: 是否要喂养你的鸡？
+
+- 是的
+	鸡舍: 我需要喂它们，我需要鸡蛋！
+	do GameDialogueManager.action_feed_animals()
+- 不用
+	鸡舍: 我不需要喂它们，我有足够鸡蛋！
+=> END

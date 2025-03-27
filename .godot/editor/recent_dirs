@@ -1,8 +1,15 @@
+res://scenes/components
+res://assets/game/objects
+/Users/bytedance/Desktop/project/CornGame/dialogue
+res://scripts/globals
+res://assets/ui
+res://scenes/ui
+res://dialogue
+res://scenes/characters/guide
+res://assets/game/characters
 res://resources/
 /Users/bytedance/Desktop/project/Godot
 /Users/bytedance
-res://scenes/components
-res://scripts/globals
 res://resources
 /Users/bytedance/Desktop/project/CornGame/scripts/globals
 res://scenes/components/
