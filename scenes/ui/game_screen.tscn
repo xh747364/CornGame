@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bhqufaeks5f2x" path="res://scenes/ui/items.tscn" id="5_ibgrs"]
 [ext_resource type="PackedScene" uid="uid://dr5q0by4omou6" path="res://scenes/ui/emotes_panel.tscn" id="5_nwa5a"]
 
-[node name="GameScreen" type="CanvasLayer" groups=["game_screen_ui"]]
+[node name="GameScreen" type="CanvasLayer" groups=["game_screen_scene"]]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

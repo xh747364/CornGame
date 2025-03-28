@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bli63ho3kbk2b"]
+[gd_scene load_steps=12 format=4 uid="uid://bli63ho3kbk2b"]
 
 [ext_resource type="PackedScene" uid="uid://d0up0oyykvdmy" path="res://scenes/ui/game_screen.tscn" id="1_rg0eo"]
 [ext_resource type="TileSet" uid="uid://6hscoxw01oec" path="res://Tilesets/game_tile_set.tres" id="2_6ub2a"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://deh281efla1ky" path="res://scenes/objects/rocks/stone.tscn" id="7_21p8u"]
 [ext_resource type="PackedScene" uid="uid://bxenwnucsh0xb" path="res://scenes/objects/plants/corn_harvest.tscn" id="8_ns4il"]
 [ext_resource type="PackedScene" uid="uid://bwfv6m3w0ucw5" path="res://scenes/objects/plants/tomato_harvest.tscn" id="9_cjs45"]
+[ext_resource type="PackedScene" uid="uid://rjsjq5dsrn7f" path="res://scenes/characters/chest/chest.tscn" id="10_so5e7"]
+[ext_resource type="PackedScene" uid="uid://cqe7gps8ii3oq" path="res://scenes/characters/guide/guide.tscn" id="11_d3db1"]
 
 [node name="TestSceneTilemap" type="Node2D"]
 y_sort_enabled = true
@@ -57,3 +59,16 @@ position = Vector2(211, 254)
 
 [node name="Log4" parent="." instance=ExtResource("6_vf51g")]
 position = Vector2(206, 213)
+
+[node name="Chest" parent="." instance=ExtResource("10_so5e7")]
+position = Vector2(466, 216)
+dialogue_start_commed = "start_cow_pasture_box"
+output_reward_scene = Array[PackedScene]([ExtResource("5_03a51")])
+
+[node name="Chest2" parent="." instance=ExtResource("10_so5e7")]
+position = Vector2(550, 215)
+dialogue_start_commed = "start_chicken_pasture_box"
+output_reward_scene = Array[PackedScene]([ExtResource("4_33fuo")])
+
+[node name="Guide" parent="." instance=ExtResource("11_d3db1")]
+position = Vector2(499, 296)

@@ -102,6 +102,8 @@ autoplay = "default"
 shape = SubResource("RectangleShape2D_dwfwe")
 
 [node name="InteractableComponent" parent="." instance=ExtResource("3_r78kn")]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
 position = Vector2(0, -0.5)

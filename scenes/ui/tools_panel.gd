@@ -17,7 +17,7 @@ func _ready() -> void:
 		DataTypes.Tools.TillGround: tool_tilling.get_node("Panel")
 	}
 	# 禁用所有工具
-	for btn in [tool_axe, tool_corn, tool_tilling, tool_tomato, tool_watering_can]:
+	for btn in [tool_corn, tool_tilling, tool_tomato, tool_watering_can]:
 			btn.disabled = true
 			btn.focus_mode = Control.FOCUS_NONE
 	ToolManager.enable_tool.connect(_on_enable_tool)

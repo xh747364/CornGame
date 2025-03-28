@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func character_setup() -> void:
 	await get_tree().physics_frame
-	
+	await get_tree().physics_frame
 	set_movement_target()
 
 

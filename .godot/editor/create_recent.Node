@@ -1,4 +1,8 @@
+Camera2D
+Node2D
+TileMapLayer
 CollisionShape2D
+StaticBody2D
 Area2D
 Marker2D
 AnimatedSprite2D
@@ -8,7 +12,3 @@ Control
 Panel
 Label
 TextureRect
-AnimatableBody2D
-Node
-ColorRect
-ReferenceRect

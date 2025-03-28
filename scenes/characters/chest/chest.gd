@@ -84,17 +84,20 @@ func trigger_feed_harvest(inventory_item: String, scene: Resource):
 		tween.tween_property(harvest_instance, "scale", Vector2(0.5, 0.5), 1.0)
 		tween.tween_callback(harvest_instance.queue_free)
 
+		InventoryManager.remove_collectable(inventory_item)
+
 # on_food_received
-func on_food_received():
+func on_food_received(_area: Area2D):
 	# 调用add_reward_scene
 	call_deferred("add_reward_scene")
 
 func add_reward_scene():
 	for scene in output_reward_scene:
 		var reward_scene: Node2D = scene.instantiate()
-		var random_position = get_random_position_in_circle(reward_maker.global_position, reward_output_radius)
+		var random_position: Vector2 = get_random_position_in_circle(reward_maker.global_position, reward_output_radius)
 		reward_scene.global_position = random_position
 		get_tree().root.add_child(reward_scene)
+		print("random_position", random_position)
 
 # 计算奖励随机位置
 func get_random_position_in_circle(center: Vector2, radius: int) -> Vector2i:

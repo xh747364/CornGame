@@ -1,10 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://rjsjq5dsrn7f"]
+[gd_scene load_steps=21 format=3 uid="uid://rjsjq5dsrn7f"]
 
 [ext_resource type="Script" uid="uid://bkqujigjqwtul" path="res://scenes/characters/chest/chest.gd" id="1_joy28"]
 [ext_resource type="Texture2D" uid="uid://d3qjuuo4rnh5u" path="res://assets/game/objects/chest.png" id="1_y4w8g"]
 [ext_resource type="PackedScene" uid="uid://ecjypf8x5sej" path="res://scenes/components/interactable_component.tscn" id="3_1ga1v"]
 [ext_resource type="PackedScene" uid="uid://4k2wuvhmxqj6" path="res://scenes/components/interactable_label_component.tscn" id="4_3h4uq"]
 [ext_resource type="PackedScene" uid="uid://ujvsqlho5xby" path="res://scenes/components/feed_component.tscn" id="5_1ga1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ga1v"]
+size = Vector2(14, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gl3m4"]
 atlas = ExtResource("1_y4w8g")
@@ -107,8 +110,13 @@ radius = 23.0217
 [sub_resource type="CircleShape2D" id="CircleShape2D_3h4uq"]
 radius = 9.0
 
-[node name="Chest" type="Node2D"]
+[node name="Chest" type="StaticBody2D"]
 script = ExtResource("1_joy28")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1ga1v")
+debug_color = Color(0.948115, 0.193535, 0.317309, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4xfi5")

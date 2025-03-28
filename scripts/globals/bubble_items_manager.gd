@@ -4,7 +4,7 @@ extends Node
 @export var bubble_offset: int = 18  # 气泡间距
 @export var start_position: Vector2 = Vector2(20, 20)  # 起始位置
 
-@onready var game_scene_ui: CanvasLayer = get_tree().get_first_node_in_group("game_scene_ui")
+@onready var game_scene_ui: CanvasLayer = get_tree().get_first_node_in_group("game_screen_scene")
 
 var current_bubbles: Array = []
 var bubble_scene = preload("res://scenes/ui/bubble_item_panel.tscn")
